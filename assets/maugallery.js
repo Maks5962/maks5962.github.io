@@ -121,6 +121,8 @@
     },
     prevImage() {
       let activeImage = null;
+
+      // Chercher l'image dans la galerie
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
@@ -128,7 +130,7 @@
       });
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
       let imagesCollection = [];
-      if (activeTag === "all") {
+      if (activeTag === "all") { // Vérifier si un filtre est actif, prendre uniquement les éléments affichés
         $(".item-column").each(function() {
           if ($(this).children("img").length) {
             imagesCollection.push($(this).children("img"));
@@ -147,19 +149,33 @@
       }
       let index = 0,
         next = null;
-
+      // Chercher l'index de la photo affichée
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i ;
         }
       });
+
+      // Passer à l'image précédente, et si on est en bout de liste, retour à la dernière
+      if(index === 0) { // 0 = début du tableau
+        index = imagesCollection.length -1
+      }
+      else {
+        index = index - 1
+      }
+
+      /*
       next =
         imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+        imagesCollection[imagesCollection.length - 1]; */
+
+      let nextFinal = imagesCollection[index]
+      $(".lightboxImage").attr("src", $(nextFinal).attr("src"));
     },
     nextImage() {
       let activeImage = null;
+
+      // Chercher l'image active dans la galerie 
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
@@ -167,13 +183,13 @@
       });
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
       let imagesCollection = [];
-      if (activeTag === "all") {
+      if (activeTag === "all") { // Si un filtre est activé, prendre uniquement les éléments affichés
         $(".item-column").each(function() {
           if ($(this).children("img").length) {
             imagesCollection.push($(this).children("img"));
           }
         });
-      } else {
+      } else { 
         $(".item-column").each(function() {
           if (
             $(this)
@@ -184,16 +200,31 @@
           }
         });
       }
+
       let index = 0,
+      
         next = null;
 
+      // Trouver l'index de la photo affichée
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+
+      // Passer à l'image suivante, et si on est en bout de liste, retour à la première
+      if(index === imagesCollection.length -1) { // -1 pour compter depuis zéro
+        index = 0
+      }
+      else {
+        index = index + 1
+      }
+
+      // Modification de la modale
+      let nextFinal = imagesCollection[index]
+
+      // next = imagesCollection[index] || imagesCollection[0];
+      $(".lightboxImage").attr("src", $(nextFinal).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
