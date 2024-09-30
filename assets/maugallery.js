@@ -164,7 +164,7 @@
         index = index - 1
       }
 
-      /*
+      /* 
       next =
         imagesCollection[index] ||
         imagesCollection[imagesCollection.length - 1]; */
