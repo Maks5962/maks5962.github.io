@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Nina Carducci - Photographe</title>
+	<title>Nina Carducci - Photographe portraits & événementiel à Bordeaux</title>
 
 	<meta name="description" content="Découvrez le travail de Nina Cardicci, photographe professionnelle spécialisée dans les évènements de groupe. Parcourez son portfolio et contactez-la via le formulaire pour toute question ou demande de devis personnalisé.">
 	
@@ -17,6 +17,23 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="./assets/maugallery.js"></script>
 	<script src="./assets/scripts.js"></script>
+
+
+	<meta property="og:title" content="Photographe à Bordeaux - Nina Carducci">
+	<meta property="og:type" content="website"> 
+	<meta property="og:url" content="https://nina-carducci.github.io/"> 
+	<meta property="og:description" content="Découvrez le portfolio de Nina Carducci, photographe professionnelle photographe professionnelle spécialisée dans les portraits et l'événementiel à Bordeaux. Contactez-la pour un devis personnalisé.">
+	<meta property="og:image" content="https://maks5962.github.io/assets/images/correctif-nina.webp"> 
+	<meta property="og:image:alt" content="Portait de Nina Carducci, photographe du site internet.">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Photographe à Bordeaux - Portraits et Événementiel">
+	<meta name="twitter:description" content="Explorez le travail de Nina Carducci, spécialisée dans les portraits et la photographie événementielle à Bordeaux. Demandez un devis pour vos projets.">
+	<meta name="twitter:image" content="https://maks5962.github.io/assets/images/correctif-nina.webp">
+	<meta name="twitter:image:alt" content="Portait de Nina Carducci, photographe du site internet.">
+	<meta name="twitter:url" content="https://nina-carducci.github.io/">
+ </head>
+
 </head>
 
 <body>
@@ -154,10 +171,40 @@
 				<textarea name="message" id="message" cols="30" rows="10"></textarea>
 				<input type="submit" value="Envoyer"/>
 			</form>
+			
+			<div itemscope itemtype="https://schema.org/LocalBusiness" class="microdonnees">
+				<!-- Nom de l'entreprise ou du service -->
+				<h2><span itemprop="name">Nina Carducci</span></h1>		
+				<!-- Description du service -->
+				<p><strong>Service :</strong> <span itemprop="description">Photographe professionnelle à Bordeaux, spécialisée dans les portraits & événementiel.</span></p>
+				<!-- URL du site web -->
+				<p><strong>Site web :</strong> <a href="https://nina-carducci.github.io/" itemprop="url">https://nina-carducci.github.io/</a></p>
+				<!-- Adresse de l'entreprise -->
+				<div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+					<p><strong>Adresse :</strong></p>
+					<p><span itemprop="streetAddress">68 avenue Alsace-Lorraine</span>, 
+					   <span itemprop="addressLocality">Bordeaux</span>, 
+					   <span itemprop="postalCode">33200</span>, 
+					   <span itemprop="addressCountry">France</span>
+					</p>
+				</div>
+				<!-- Numéro de téléphone -->
+				<p><strong>Téléphone :</strong> <a href="tel:+33556677889" itemprop="telephone">+33 (0)5 56 67 78 89</a></p>
+				<!-- Horaires d'ouverture -->
+				<p><strong>Horaires :</strong></p>
+				<ul>
+					<li>Lundi - Vendredi : <span itemprop="openingHours">10:00-19:00</span></li>
+					<li>Samedi et Dimanche : Fermé</li>
+				</ul>
+				<!-- Liens réseaux sociaux -->
+				<p><strong>Instagram :</strong> <a href="https://www.instagram.com/ninacarducci.photo" itemprop="sameAs">Lien vers mon Instagram</a></p>
+			</div>
+
 		</div>
 		<div class="picture right">
 			<img src="./assets/images/correctif-camera.webp" alt="Illustration d'un appareil photo vintage.">
 		</div>
+
 	</div>
 </div>
 </body>

@@ -256,6 +256,21 @@ input[type="submit"] {
 	background-color: #BEB45A;
 	padding: .5em 1em
 }
+.microdonnees * {
+	padding: 0;
+	margin: 0.5em 0;
+	list-style: none;
+}
+
+.microdonnees a {
+	color: #000;
+}
+
+.microdonnees h2 {
+	margin-bottom: 0.5em;
+}
+
+
 
 @media all and (max-width: 1180px) {
 	.picture {
@@ -324,7 +339,7 @@ input[type="submit"] {
 	}
 	.picture.right::before {
 		width: 100%;
-		height: 30%;
+		height: 20%;
 		position: absolute;
 		bottom: 0;
 		right: 0;
