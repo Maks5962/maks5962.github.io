@@ -156,13 +156,9 @@
         }
       });
 
-      // Passer à l'image précédente, et si on est en bout de liste, retour à la dernière
-      if(index === 0) { // 0 = début du tableau
-        index = imagesCollection.length -1
-      }
-      else {
-        index = index - 1
-      }
+      // Passer à l'image précédente, et si on est en bout de liste, retour à la dernière méthode Ternaire
+      index = (index === 0) ? imagesCollection.length -1 : index - 1
+
 
       /* 
       next =
@@ -212,13 +208,8 @@
         }
       });
 
-      // Passer à l'image suivante, et si on est en bout de liste, retour à la première
-      if(index === imagesCollection.length -1) { // -1 pour compter depuis zéro
-        index = 0
-      }
-      else {
-        index = index + 1
-      }
+      // Passer à l'image suivante, et si on est en bout de liste, retour à la première méthode Ternaire
+      index = (index === imagesCollection.length -1) ? 0 : index + 1
 
       // Modification de la modale
       let nextFinal = imagesCollection[index]
